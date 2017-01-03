@@ -94,7 +94,8 @@ namespace Microsoft.Identity.Client.Internal.Http
 
                 if ((response.StatusCode.Equals(HttpStatusCode.InternalServerError)) ||
                     (response.StatusCode).Equals(HttpStatusCode.GatewayTimeout) ||
-                    (response.StatusCode).Equals(HttpStatusCode.ServiceUnavailable))
+                    (response.StatusCode).Equals(HttpStatusCode.ServiceUnavailable) ||
+                    (response.StatusCode).Equals(HttpStatusCode.BadGateway))
                 {
                     isRetryable = true;
                 }
